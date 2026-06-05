@@ -1,0 +1,63 @@
+{
+  "name": "bilibili-visibility-scheduler",
+  "version": "1.0.0",
+  "description": "B站视频可见性定时管理工具 - 支持定时/立即修改视频可见性",
+  "main": "dist/main/index.js",
+  "author": "Taffy",
+  "license": "MIT",
+  "scripts": {
+    "dev:renderer": "vite --config vite.renderer.config.ts",
+    "dev:main": "tsc -p tsconfig.node.json --watch",
+    "build:renderer": "vite build --config vite.renderer.config.ts",
+    "build:main": "tsc -p tsconfig.node.json",
+    "build": "npm run build:renderer && npm run build:main && electron-builder",
+    "start": "electron dist/main/index.js"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.2.5",
+    "antd": "^6.4.3",
+    "axios": "^1.17.0",
+    "dayjs": "^1.11.21",
+    "electron-store": "^11.0.2",
+    "node-cron": "^4.2.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.17.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^10.0.3",
+    "cross-env": "^10.1.0",
+    "electron": "^42.3.3",
+    "electron-builder": "^26.8.1",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^6.0.3",
+    "vite": "^6.4.3"
+  },
+  "build": {
+    "appId": "com.taffy.bili-visibility-scheduler",
+    "productName": "B站视频可见性定时器",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "resources/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "language": "2052"
+    }
+  }
+}
