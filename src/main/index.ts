@@ -40,7 +40,7 @@ function createMainWindow(): void {
     minWidth: 960,
     minHeight: 600,
     title: 'B站视频可见性定时器',
-    icon: path.join(__dirname, '../../resources/icon.ico'),
+    icon: path.join(__dirname, '../../resources/icon-256.png'),
     webPreferences: {
       preload: path.join(__dirname, '../preload/index.js'),
       contextIsolation: true,

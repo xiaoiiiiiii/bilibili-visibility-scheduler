@@ -23,6 +23,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.17.0",
+    "sharp": "^0.34.5",
     "zustand": "^5.0.14"
   },
   "devDependencies": {
@@ -52,7 +53,7 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "resources/icon.ico"
+      "icon": "resources/icon-512.png"
     },
     "nsis": {
       "oneClick": false,
